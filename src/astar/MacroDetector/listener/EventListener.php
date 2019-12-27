@@ -25,11 +25,8 @@ class EventListener implements Listener
 
     public function onCommand(CommandSender $sender, Command $command, string $label, array $args): bool
     {
-        if (!$sender->hasPermission("macrodetector.macro.reply"))
-            return false;
-
         if ($command->getName() != "매크로")
-            return false;
+            return true;
 
         if (!isset($args[0])) {
             if ($sender->isOp()) {
@@ -43,6 +40,11 @@ class EventListener implements Listener
 
         switch ($args[0]) {
             case "확인":
+                if(!$sender->isOp())
+                {
+                    $sender->sendMessage("§d[ §f매크로 §d] §f권한이 없습니다.");
+                    return true;
+                }
                 if (!isset($args[1])) {
                     $sender->sendMessage("§d[ §f매크로 §d] §f매크로 확인 <유저명> - 해당유저의 매크로 사용을 탐지합니다.");
                     return true;
@@ -106,5 +108,6 @@ class EventListener implements Listener
                     }
                 }
         }
+        return true;
     }
 }
