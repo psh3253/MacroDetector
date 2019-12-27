@@ -22,12 +22,12 @@ class MacroDetector extends PluginBase implements Listener
     {
         $this->eventListener = new EventListener ($this);
         $this->registerCommand("매크로", "macrodetector.macro.answer", "매크로의 사용여부를 탐지합니다.", "매크로");
-        $this->data = file_exists($this->getDataFolder()."log.yaml") ? yaml_parse("log.yaml") : [];
+        $this->data = file_exists($this->getDataFolder()."log.yml") ? yaml_parse("log.yml") : [];
     }
 
     public function onDisable()
     {
-        file_put_contents($this->getDataFolder()."log.yaml", $this->data);
+        file_put_contents($this->getDataFolder()."log.yml", $this->data);
     }
 
     public function registerCommand($name, $permission, $description = "", $usage = "")
