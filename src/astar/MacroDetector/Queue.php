@@ -1,6 +1,6 @@
 <?php
 
-namespace MacroDetector;
+namespace astar\MacroDetector;
 
 final class Queue
 {

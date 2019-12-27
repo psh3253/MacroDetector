@@ -1,8 +1,8 @@
 <?php
 
-namespace MacroDetector\task;
+namespace astar\MacroDetector\task;
 
-use MacroDetector\MacroDetector;
+use astar\MacroDetector\MacroDetector;
 use pocketmine\Player;
 use pocketmine\scheduler\Task;
 

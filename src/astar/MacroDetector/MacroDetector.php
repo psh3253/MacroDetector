@@ -1,8 +1,8 @@
 <?php
 
-namespace MacroDetector;
+namespace astar\MacroDetector;
 
-use MacroDetector\listener\EventListener;
+use astar\MacroDetector\listener\EventListener;
 use pocketmine\command\PluginCommand;
 use pocketmine\event\Listener;
 use pocketmine\Player;

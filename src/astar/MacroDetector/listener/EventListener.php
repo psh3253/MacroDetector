@@ -1,10 +1,10 @@
 <?php
 
-namespace MacroDetector\listener;
+namespace astar\MacroDetector\listener;
 
-use MacroDetector\MacroDetector;
-use MacroDetector\Queue;
-use MacroDetector\task\TimeLimitTask;
+use astar\MacroDetector\MacroDetector;
+use astar\MacroDetector\Queue;
+use astar\MacroDetector\task\TimeLimitTask;
 use pocketmine\command\Command;
 use pocketmine\command\CommandSender;
 use pocketmine\event\Listener;
