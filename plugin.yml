@@ -1,0 +1,13 @@
+name: MacroDetector
+main: astar\MacroDetector\MacroDetector
+version: 1.0.0
+api:
+  - 3.11.1
+  - 3.11.2
+  - 3.11.3
+
+permissions:
+  macrodetector.macro.check:
+    default: op
+  macrodetector.macro.answer:
+    default: true
