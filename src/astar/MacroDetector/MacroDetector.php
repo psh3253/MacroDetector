@@ -55,11 +55,11 @@ class MacroDetector extends PluginBase implements Listener
         }
         $this->data[$player->getName()]["log"][] = date("Y-m-d H:i:s");
         $this->data[$player->getName()]["count"] += 1;
-        foreach ($this->getServer()->getOnlinePlayers() as $player)
+        foreach ($this->getServer()->getOnlinePlayers() as $op)
         {
-            if($player->isOp())
+            if($op->isOp())
             {
-                $player->sendMessage("§d[ §f매크로 §d] §f".$player->getName()."님이 매크로 테스트에 적발되었습니다.");
+                $op->sendMessage("§d[ §f매크로 §d] §f".$player->getName()."님이 매크로 테스트에 적발되었습니다.");
             }
         }
         unset(Queue::$checkQueue[$player->getName()]);
@@ -67,11 +67,11 @@ class MacroDetector extends PluginBase implements Listener
     public function TestSuccess(Player $player)
     {
         $player->sendMessage("§d[ §f매크로 §d] §f매크로 테스트에 정상적으로 §a통과§f하였습니다.");
-        foreach ($this->getServer()->getOnlinePlayers() as $player)
+        foreach ($this->getServer()->getOnlinePlayers() as $op)
         {
-            if($player->isOp())
+            if($op->isOp())
             {
-                $player->sendMessage("§d[ §f매크로 §d] §f".$player->getName()."님이 매크로 테스트에 통과하였습니다.");
+                $op->sendMessage("§d[ §f매크로 §d] §f".$player->getName()."님이 매크로 테스트에 통과하였습니다.");
             }
         }
         unset(Queue::$checkQueue[$player->getName()]);
